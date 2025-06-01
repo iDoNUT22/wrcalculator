@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Win Rate & Productivity Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <h1>Player Timer</h1>
+    <ul>
+      <li><a href="#calculator">Win Rate</a></li>
+      <li><a href="#grind-timer">Grind Timer</a></li>
+      <li><a href="#sleep-reminder">Sleep Reminder</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- Win Rate Calculator -->
+    <section class="calculator-box" id="calculator">
+      <h2>Win Rate Calculator</h2>
+      <label>Desired Win Rate (%):
+        <input type="number" id="desired" step="0.01" placeholder="e.g. 60" />
+      </label>
+      <label>Current Battles:
+        <input type="number" id="battles" placeholder="e.g. 200" />
+      </label>
+      <label>Current Win Rate (%):
+        <input type="number" id="current" step="0.01" placeholder="e.g. 55" />
+      </label>
+      <button onclick="calculate()">Calculate Wins Needed</button>
+      <p id="result"></p>
+    </section>
+
+    <!-- Grind Timer -->
+<section class="calculator-box" id="grind-timer">
+  <h2>Grind Timer</h2>
+  <label>Hours:
+    <input type="number" id="grind-hours" min="0" />
+  </label>
+  <label>Minutes:
+    <input type="number" id="grind-minutes" min="0" />
+  </label>
+  <label>Seconds:
+    <input type="number" id="grind-seconds" min="0" />
+  </label>
+  <button onclick="startGrindTimer()">Start Grind</button>
+  <p id="grind-status"></p>
+  <p id="grind-countdown"></p>
+</section>
+
+<!-- Sleep Reminder -->
+<section class="calculator-box" id="sleep-reminder">
+  <h2>Sleep Reminder</h2>
+  <label>Sleep Start Time:
+    <input type="time" id="sleep-start" />
+  </label>
+  <label>Wake Time:
+    <input type="time" id="sleep-end" />
+  </label>
+  <button onclick="calculateSleep()">Calculate Sleep Duration</button>
+  <p id="sleep-result"></p>
+  <p id="sleep-countdown"></p>
+</section>
+
+  </main>
+
+  <audio id="alarm-sound" src="alarm.mp3" preload="auto"></audio>
+  <script src="script.js"></script>
+</body>
+</html>
